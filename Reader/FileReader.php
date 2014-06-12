@@ -5,8 +5,8 @@ namespace Symfony\Bundle\LogReaderBundle\Reader;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use LogReader\LogReaderBundle\Document\Log;
-use LogReader\LogReaderBundle\Document\File;
+use Symfony\Bundle\LogReaderBundle\Document\Log;
+use Symfony\Bundle\LogReaderBundle\Document\File;
 
 
 class FileReader
