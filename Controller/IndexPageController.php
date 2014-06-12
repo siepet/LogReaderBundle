@@ -29,7 +29,7 @@ class IndexPageController extends Controller
             $logsColl = $this->readDatabase($fileName, null, null);
         }
 
-        return $this->render('LogReaderLogReaderBundle:Default:index.html.twig', array(
+        return $this->render('LogReaderBundle:Default:index.html.twig', array(
             'title' => $fileName." - stats",
             'collection' => $logsColl)
         );
@@ -46,7 +46,7 @@ class IndexPageController extends Controller
         $params = $this->get('request')->query->all();
         $logsColl = $this->readDatabase($fileName, $id, $params);
 
-        return $this->render('LogReaderLogReaderBundle:Default:index.html.twig', array(
+        return $this->render('LogReaderBundle:Default:index.html.twig', array(
                 'title' => $fileName." - stats",
                 'collection' => $logsColl)
         );
@@ -77,7 +77,7 @@ class IndexPageController extends Controller
         $dm = $mongodb->getManager();
 
         /** @var $repository LogRepository */
-        $repository = $dm->getRepository('LogReaderLogReaderBundle:Log');
+        $repository = $dm->getRepository('LogReaderBundle:Log');
 
         $rep = $repository->findSortedAndFiltered($fileName, $sortMethod, $params);
 

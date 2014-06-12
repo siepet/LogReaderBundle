@@ -1,9 +1,9 @@
-{% extends 'LogReaderLogReaderBundle::base.html.twig' %}
+{% extends 'LogReaderBundle::base.html.twig' %}
 {% block title %}{{ title }} {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {% stylesheets
-        '@LogReaderLogReaderBundle/Resources/public/css/main.css'
+        '@LogReaderBundle/Resources/public/css/main.css'
         filter='cssrewrite'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -20,10 +20,7 @@
                         <option value="request">request</option>
                         <option value="security">security</option>
                     </select>
-                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
                 </div>
-            <!--</form>
-            <form class="form-inline" method="get">!-->
                 <div class="form-group">
                     <label for="selectLevel">Level filter: </label>
                     <select id="selectLevel" class="form-control" name="levelName">
@@ -33,12 +30,10 @@
                         <option value="INFO">INFO</option>
                         <option value="DEBUG">DEBUG</option>
                     </select>
-                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
                 </div>
                 <div class="form-group">
                     <label for="dateFrom">From date: </label>
                     <input type="date" id="dateFrom" name="dateFrom" value="{{ "-2 weeks"|date("Y-m-d") }}" required>
-                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
                     <label for="dateTo">To date:</label>
                     <input type="date" id="dateTo" name="dateTo" value="{{ "now"|date("Y-m-d") }}" required>
                     <input type="submit" class="btn btn-primary" value="Filter it!"/>

@@ -1,8 +1,8 @@
 log_reader_web_homepage:
     pattern:  /logreader
-    defaults: { _controller: LogReaderLogReaderBundle:IndexPage:index }
+    defaults: { _controller: LogReaderBundle:IndexPage:index }
 
 log_reader_web_sort:
     pattern: /logreader/{id}
-    defaults: { _controller: LogReaderLogReaderBundle:IndexPage:sort }
+    defaults: { _controller: LogReaderBundle:IndexPage:sort }
 

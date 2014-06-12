@@ -50,7 +50,7 @@ class FileReader
         $fileHandle = fopen($fileName, "r");
         $logFileName = basename($fileName);
         $logFilePath = dirname($fileName);
-        $currentFile = $this->mongodb->getRepository('LogReaderLogReaderBundle:File')->findOneBy(array('name' => $logFileName));
+        $currentFile = $this->mongodb->getRepository('LogReaderBundle:File')->findOneBy(array('name' => $logFileName));
         if($currentFile){
             $this->lines = $currentFile->getLines();
         } else {
