@@ -1,0 +1,27 @@
+{
+    "name": "symfony/logreader-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Log Reader Bundle",
+    "keywords": ["symfony", "log", "reader", "logreader", "bundle"],
+    "homepage": "https://github.com/siepet/LogReaderBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Siepetowski",
+            "homepage": "https://github.com/siepet",
+            "email": "siepet7@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/mongodb": ">=1.1.5,<2.0",
+        "doctrine/mongodb-odm": "1.0.*@dev",
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
+        "symfony/symfony": "2.3.*",
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*"
+    },
+    "target-dir": "Symfony/Bundle/LogReaderBundle"
+
+}
