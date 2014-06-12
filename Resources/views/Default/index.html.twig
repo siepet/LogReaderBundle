@@ -1,0 +1,92 @@
+{% extends 'LogReaderLogReaderBundle::base.html.twig' %}
+{% block title %}{{ title }} {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+        '@LogReaderLogReaderBundle/Resources/public/css/main.css'
+        filter='cssrewrite'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock stylesheets %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline" method="get">
+                <div class="form-group">
+                    <label for="selectChanel">Channel filter: </label>
+                    <select id="selectChanel" class="form-control" name="channel">
+                        <option value="null">null</option>
+                        <option value="request">request</option>
+                        <option value="security">security</option>
+                    </select>
+                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
+                </div>
+            <!--</form>
+            <form class="form-inline" method="get">!-->
+                <div class="form-group">
+                    <label for="selectLevel">Level filter: </label>
+                    <select id="selectLevel" class="form-control" name="levelName">
+                        <option value="null">null</option>
+                        <option value="CRITICAL">CRITICAL</option>
+                        <option value="ERROR">ERROR</option>
+                        <option value="INFO">INFO</option>
+                        <option value="DEBUG">DEBUG</option>
+                    </select>
+                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
+                </div>
+                <div class="form-group">
+                    <label for="dateFrom">From date: </label>
+                    <input type="date" id="dateFrom" name="dateFrom" value="{{ "-2 weeks"|date("Y-m-d") }}" required>
+                    <!-- <input type="submit" class="btn btn-primary" value="Filter it!"/> !-->
+                    <label for="dateTo">To date:</label>
+                    <input type="date" id="dateTo" name="dateTo" value="{{ "now"|date("Y-m-d") }}" required>
+                    <input type="submit" class="btn btn-primary" value="Filter it!"/>
+                </div>
+            </form>
+        </div>
+    </div>
+{% if collection[0] is defined %}
+    <h1>{{ collection[0].file }}:</h1>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th><a href="date">Date</a></th>
+                        <th><a href="channel">Channel</a></th>
+                        <th><a href="levelName">Level</a></th>
+                        <th>Message</th>
+                        <th>Context</th>
+                        <th>Extra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in collection %}
+                        {% if log.levelName == "ERROR" %}
+                        <tr class="danger">
+                        {% elseif log.levelName == "CRITICAL" %}
+                        <tr class="critical">
+                        {% else %}
+                        <tr>
+                        {% endif %}
+                        <td>{% if log.datetime %}{{ log.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ log.channel }}</td>
+                        <td>{{ log.levelName }}</td>
+                        <td>{{ log.message }}</td>
+                        <td>
+                            {% for key in log.context|keys %}
+                            {{ key }}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for key in log.extra|keys %}
+                                {{ key }}
+                            {% endfor %}
+                        </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+{% else %}
+<h1>Currently no logs.</h1>
+{% endif %}
+{% endblock %}

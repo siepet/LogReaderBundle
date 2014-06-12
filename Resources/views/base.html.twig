@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %} {% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets
+        '@LogReaderLogReaderBundle/Resources/public/css/bootstrap.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container">
+            {% block body %} {% endblock %}
+
+        <footer>LogReader copyright 2014</footer>
+        </div>
+        {% block javascripts %} {% endblock %}
+    </body>
+</html>

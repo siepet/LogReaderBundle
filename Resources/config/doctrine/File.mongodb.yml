@@ -1,0 +1,12 @@
+LogReader\LogReaderBundle\Document\File:
+    fields:
+        id:
+            id: true
+        name:
+            type: string
+        path:
+            type: string
+        lines:
+            type: int
+
+    repositoryClass: LogReader\LogReaderBundle\Repository\FileRepository

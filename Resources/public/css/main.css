@@ -1,0 +1,17 @@
+body {
+    padding: 15px;
+}
+.table > thead > tr > td.critical,
+.table > tbody > tr > td.critical,
+.table > tfoot > tr > td.critical,
+.table > thead > tr > th.critical,
+.table > tbody > tr > th.critical,
+.table > tfoot > tr > th.critical,
+.table > thead > tr.critical > td,
+.table > tbody > tr.critical > td,
+.table > tfoot > tr.critical > td,
+.table > thead > tr.critical > th,
+.table > tbody > tr.critical > th,
+.table > tfoot > tr.critical > th {
+    background-color: #FF7373;
+}

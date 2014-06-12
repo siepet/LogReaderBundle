@@ -1,0 +1,20 @@
+LogReader\LogReaderBundle\Document\Log:
+    fields:
+        id:
+            id: true
+        datetime:
+            type: date
+        channel:
+            type: string
+        levelName:
+            type: string
+        message:
+            type: string
+        context:
+            type: hash
+        extra:
+            type: hash
+        file:
+            type: string
+
+    repositoryClass: LogReader\LogReaderBundle\Repository\LogRepository
