@@ -1,6 +1,6 @@
 <?php
 
-namespace LogReader\LogReaderBundle\Reader;
+namespace Symfony\Bundle\LogReaderBundle\Reader;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;

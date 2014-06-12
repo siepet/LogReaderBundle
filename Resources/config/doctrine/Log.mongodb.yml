@@ -1,4 +1,4 @@
-LogReader\LogReaderBundle\Document\Log:
+Symfony\Bundle\LogReaderBundle\Document\Log:
     fields:
         id:
             id: true
@@ -17,4 +17,4 @@ LogReader\LogReaderBundle\Document\Log:
         file:
             type: string
 
-    repositoryClass: LogReader\LogReaderBundle\Repository\LogRepository
+    repositoryClass: Symfony\Bundle\LogReaderBundle\Repository\LogRepository

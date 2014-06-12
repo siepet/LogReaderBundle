@@ -1,6 +1,6 @@
 <?php
 
-namespace LogReader\LogReaderBundle\Repository;
+namespace Symfony\Bundle\LogReaderBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\DocumentRepository;

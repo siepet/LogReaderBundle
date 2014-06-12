@@ -1,6 +1,6 @@
 <?php
 
-namespace LogReader\LogReaderBundle\Controller;
+namespace Symfony\Bundle\LogReaderBundle\Controller;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use LogReader\LogReaderBundle\Repository\LogRepository;

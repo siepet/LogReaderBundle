@@ -1,6 +1,6 @@
 <?php
 
-namespace LogReader\LogReaderBundle\Document;
+namespace Symfony\Bundle\LogReaderBundle\Document;
 
 class Log
 {

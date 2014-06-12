@@ -1,6 +1,6 @@
 <?php
 
-namespace LogReader\LogReaderBundle\DependencyInjection;
+namespace Symfony\Bundle\LogReaderBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

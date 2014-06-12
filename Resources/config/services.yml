@@ -1,6 +1,6 @@
 parameters:
-    logreader.controller.indexpage.class: LogReader\LogReaderBundle\Controller\IndexPageController
-    logreader.reader.filereader.class: LogReader\LogReaderBundle\Reader\FileReader
+    logreader.controller.indexpage.class: Symfony\Bundle\LogReaderBundle\Controller\IndexPageController
+    logreader.reader.filereader.class: Symfony\Bundle\LogReaderBundle\Reader\FileReader
 services:
     logreader.indexpage.controller:
         class: "%logreader.controller.indexpage.class%"
