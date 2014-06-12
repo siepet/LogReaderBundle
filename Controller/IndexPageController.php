@@ -5,7 +5,7 @@ namespace Symfony\Bundle\LogReaderBundle\Controller;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use LogReader\LogReaderBundle\Repository\LogRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use LogReader\LogReaderBundle\Reader\FileReader;
+use Symfony\Bundle\LogReaderBundle\Reader\FileReader;
 
 
 class IndexPageController extends Controller
