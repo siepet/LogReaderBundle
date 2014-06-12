@@ -23,5 +23,6 @@
         "symfony/monolog-bundle": "2.3.*"
     },
     "target-dir": "Symfony/Bundle/LogReaderBundle"
-
+    "autoload": {
+        "psr-0": { "Symfony\\Bundle\\LogReaderBundle": "" }
 }
