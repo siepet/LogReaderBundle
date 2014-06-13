@@ -9,10 +9,44 @@ LogReaderBundle allows you to check your Symfony2 application logs using parsed 
 
 Installation
 --------------
-Add to your `composer.json`
+Be sure you have installed MongoDB on your machine with extension enabled in your `php.ini`:
+```json
+extension=mongo.so
+```
+also remember about the proper configuration in `config.yml` for `doctrine_mongodb`:
+
+```yml
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://host:port/database_name
+            options:
+                username: username
+                password: password
+    default_database: default_database_name
+    document_managers:
+        default:
+            auto_mapping: true
+```
+
+Add to your `composer.json` the requirment of LogReaderBundle
 ```json
 "require": "symfony/logreader-bundle": "dev-master",
 ```
+And be sure, you have dependencies installed:
+```json
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/mongodb": ">=1.1.5,<2.0",
+        "doctrine/mongodb-odm": "1.0.*@dev",
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
+        "symfony/symfony": "2.3.*",
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*"
+    },
+```
+
 Then simply run
 ```sh
 $ php composer.phar update
@@ -48,7 +82,7 @@ log_reader_logreader:
 
 
 
-Due to problems with autoloading, you might have to add, if not done automatically, to `vendor/composer/autoload_namespaces.php` following line:
+Due to problems with autoloading namespaces, you might have to add, if not done automatically, to `vendor/composer/autoload_namespaces.php` following line:
 ```php
 'Symfony\\Bundle\\LogReaderBundle' => array($vendorDir . '/symfony/logreader-bundle'),
 ```
