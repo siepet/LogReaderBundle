@@ -31,19 +31,10 @@ class LogReaderExtension extends Extension
             );
         }
 
-        $container->setParameter(
-            'log_folder',
-            $config['log_folder']
-        );
-
-        $container->setParameter(
-            'log_file',
-            $config['log_file']
-        );
-
-        $container->setParameter(
-            'log_file_path',
-            $config['log_folder'].$config['log_file']
-        );
-    }
+        $container->setParameter('log_folder', $config['log_folder']);
+        $container->setParameter('default_file', $config['default_file']);
+        $container->setParameter('log_file', $config['log_file']);
+        $container->setParameter('log_file_path', $config['log_folder'].$config['log_file']);
+   }
+    
 }

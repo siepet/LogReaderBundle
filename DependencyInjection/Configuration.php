@@ -22,7 +22,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('log_file')->end()
+            ->scalarNode('default_file')->end()
+            ->scalarNode('log_file')
+                ->defaultValue('dev.log')->end()
             ->scalarNode('log_folder')->end()
             ->end();
         // Here you should define the parameters that are allowed to

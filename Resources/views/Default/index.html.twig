@@ -17,8 +17,9 @@
                     <label for="selectChanel">Channel filter: </label>
                     <select id="selectChanel" class="form-control" name="channel">
                         <option value="null">null</option>
-                        <option value="request">request</option>
-                        <option value="security">security</option>
+                        {% for channel in channels %}
+                            <option value="{{ channel }}">{{ channel }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-group">
@@ -37,6 +38,19 @@
                     <label for="dateTo">To date:</label>
                     <input type="date" id="dateTo" name="dateTo" value="{{ "now"|date("Y-m-d") }}" required>
                     <input type="submit" class="btn btn-primary" value="Filter it!"/>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="logfile">Log file:</label>
+                    <select id="logfile" class="form-control" name="logfile">
+                        {% for file in files %}
+                            <option value="{{ file }}">{{ file }}</option>
+                        {% endofor %}
+                    </select>
+                    <input type="submit" class="btn btn-primary" value="Select" />
                 </div>
             </form>
         </div>
