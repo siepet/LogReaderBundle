@@ -22,10 +22,19 @@ After it's done you add following configuration to
 `app/config/config.yml`:
 
 ```yml
+assetic:
+    ...
+    bundles: [ LogReaderBundle ]
+    ...
+
 log_reader:
     log_folder: ""
     log_file: ""
 ```
+
+
+
+
 `app/config/routing.yml`:
 
 ```yml
