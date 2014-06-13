@@ -3,7 +3,7 @@
 namespace Symfony\Bundle\LogReaderBundle\Controller;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
-use LogReader\LogReaderBundle\Repository\LogRepository;
+use Symfony\Bundle\LogReaderBundle\Repository\LogRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Bundle\LogReaderBundle\Reader\FileReader;
 use Symfony\Component\Finder\Finder;
@@ -21,7 +21,7 @@ class IndexPageController extends Controller
         $fileReader = $this->get('logreader.reader.filereader');
         $fileName = $this->container->getParameter('default_file');
         $data = $this->get('request')->request->get('logfile');
-        $if($data !== null){
+        if($data !== null){
             $fileName = $data;
             $session->set('logfile', $data);
         }
