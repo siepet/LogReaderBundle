@@ -60,7 +60,7 @@ class LogRepository extends DocumentRepository
 
     public function findChannels()
     {
-        return $this->createQueryBuilder->distinct('channel')->getQuery()->execute();
+        return $this->createQueryBuilder()->distinct('channel')->getQuery()->execute();
     }
 
 }
