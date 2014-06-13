@@ -22,6 +22,9 @@ After it's done you add following configuration to
 `app/config/config.yml`:
 
 ```yml
+imports:
+    - { resource: "@LogReaderBundle/Resources/config/services.yml" }
+
 assetic:
     ...
     bundles: [ LogReaderBundle ]
