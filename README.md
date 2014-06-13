@@ -28,8 +28,8 @@ assetic:
     ...
 
 log_reader:
-    log_folder: ""
-    log_file: ""
+    log_folder: "/full/path/to/folder/with/log/files/"
+    log_file: "logfile.log"
 ```
 
 
@@ -44,9 +44,8 @@ log_reader_logreader:
 ```
 
 
-Where the `log_folder` is full path to directory with logs and `log_file` is log file being shown.
 
-Due to problems with autoloading, you might have to add to `vendor/composer/autoload_namespaces.php` following line:
+Due to problems with autoloading, you might have to add, if not done automatically, to `vendor/composer/autoload_namespaces.php` following line:
 ```php
 'Symfony\\Bundle\\LogReaderBundle' => array($vendorDir . '/symfony/logreader-bundle'),
 ```
